@@ -2,35 +2,55 @@
 
 ![banner-image](banner-image.png)
 
-`atlas.notes` is a beautiful, terminal-based markdown note manager for the Atlas Suite. It allows you to quickly create, edit, read, and delete notes from your terminal with high-fidelity rendering.
+`atlas.notes` is a beautiful, high-fidelity terminal-based Markdown note manager for the **Atlas Suite**. It features a full interactive TUI that allows you to create, read, and write notes without ever leaving your terminal.
 
-## Features
-- **Markdown Support:** All notes are stored as `.md` files.
-- **Beautiful Rendering:** Uses `glamour` for high-fidelity markdown rendering in the terminal.
-- **CRUD Operations:** Create, List, Read, Update, and Delete notes.
-- **Safe Deletion:** Confirmation required for deleting notes.
-- **System Integration:** Opens your preferred `$EDITOR`.
+## ✨ Features
+- 📝 **Built-in Editor:** Multi-line editing directly in the TUI—no external editor required (though you can still use one!).
+- 🎨 **High-Fidelity Rendering:** Uses `glamour` for beautiful, stylized markdown viewing.
+- 📂 **Local First:** Notes are stored as standard `.md` files in `~/.atlas/atlas.notes.data/`.
+- ⌨️ **Keyboard Centric:** Fast navigation and CRUD operations with intuitive keybindings.
+- 🛠️ **Part of Atlas Suite:** Designed to work seamlessly with other Atlas tools.
 
-## Installation
-Requires [gobake](https://github.com/fezcode/gobake).
+## 🚀 Installation
+
+### Via Atlas Hub (Recommended)
+`atlas.notes` is part of the Atlas ecosystem. You can manage it via `atlas.hub`:
 
 ```bash
+# Once synced, you can use atlas.hub to discover and manage
+atlas.hub list Productivity
+```
+
+### From Source
+Requires [gobake](https://github.com/fezcode/gobake) for multi-platform builds.
+
+```bash
+git clone https://github.com/fezcode/atlas.notes
 cd atlas.notes
 gobake build
-./build/atlas.notes-windows-amd64.exe -v
 ```
+Binaries will be generated in the `build/` directory.
 
-## Usage
-```bash
-atlas.notes ls             # List all notes
-atlas.notes new my-note    # Create a new note
-atlas.notes read my-note   # Read and render a note
-atlas.notes edit my-note   # Edit a note
-atlas.notes rm my-note     # Delete a note
-```
+## 🕹️ Controls
 
-## Storage
-Notes are stored in `~/.atlas/atlas.notes.data/`.
+| Key | Action |
+|-----|--------|
+| `↑/↓` or `k/j` | Navigate notes list |
+| `Enter` | Read/Render selected note |
+| `n` | Create a new note |
+| `e` | Edit note content (Internal Editor) |
+| `d` | Delete note (requires confirmation) |
+| `q` or `Esc` | Quit / Back to List |
 
-## License
+### Internal Editor
+| Key | Action |
+|-----|--------|
+| `Ctrl+S` | Save changes and return to reader |
+| `Esc` | Discard changes and return to list |
+
+## 📂 Storage
+Your notes are saved in:
+`~/.atlas/atlas.notes.data/`
+
+## 📄 License
 MIT
